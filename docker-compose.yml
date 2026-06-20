@@ -1,0 +1,14 @@
+services:
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: pumpshield
+      POSTGRES_PASSWORD: pumpshield
+      POSTGRES_DB: pumpshield
+    ports:
+      - "5432:5432"
+    volumes:
+      - pumpshield_pgdata:/var/lib/postgresql/data
+
+volumes:
+  pumpshield_pgdata:
